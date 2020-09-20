@@ -1,0 +1,96 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-text-in-primary);
+    background: var(--color-primary);
+}
+
+.form-container {
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+.form-container h1 {
+    font-weight: 700;
+    font-size: 7rem;
+    font-family: Poppins;
+    margin-bottom: 4rem;
+    color: var(--color-title-in-primary);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form > label {
+    font-weight: 400;
+    font-family: Archivo;
+    font-size: 2.5rem;
+    align-self: flex-start;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-in-primary);
+}
+
+.form > input {
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    padding: 1.3rem 2rem;
+    border-radius: 1.2rem;
+    border: hidden;
+    background-color: var(--color-input-background);
+}
+
+.form > button {
+    font-size: 2.5rem;
+    padding: 1.3rem 2rem;
+    border-radius: 1.2rem;
+    border: hidden;
+    background-color: var(--color-secondary);
+    color: var(--color-button-text);
+    cursor: pointer;
+}
+
+.form > button:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+.form > button:active {
+    opacity: 0.8;
+}
+
+.register-button-container {
+    margin-top: 2rem;
+}
+
+.register-button {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 2.2rem;
+    color: var(--color-text-in-primary);
+}
+
+.register-button:hover {
+    color: var(--color-text-complement);
+}
+
+.register-button:active {
+    opacity: 0.6;
+}
+
+@media (min-width: 700px) {
+    .container {
+        max-width: none;
+        min-width: 700px;
+    }
+    .form-container {
+        width: 30%;
+    }
+}

@@ -1,0 +1,57 @@
+export async function login(body) {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/login`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        }).then(res => res.json())
+            .then(data => data)
+
+        return response
+
+    } catch (error) {
+        console.log(error)
+        return null
+    }
+}
+
+export async function register(body) {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/register`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        }).then(res => res.json())
+            .then(data => data)
+    
+        return response
+    } catch (error) {
+        console.log(error)
+        return null
+    }
+}
+
+export async function logout(accessToken) {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/logout`, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${accessToken}`
+            }
+        }).then(res => res.json())
+            .then(data => data)
+
+        return response
+    } catch (error) {
+        console.log(error)
+        return null
+    }
+}

@@ -14,12 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('login', 'App\Http\Controllers\UserController@login');
+Route::post('login', 'App\Http\Controllers\UserController@login');
 Route::post('register', 'App\Http\Controllers\UserController@register');
 Route::get('debtors', 'App\Http\Controllers\DebtController@index');
 
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('logout', 'App\Http\Controllers\UserController@logout');
+    Route::delete('logout', 'App\Http\Controllers\UserController@logout');
     Route::post('debts', 'App\Http\Controllers\DebtController@create');
     Route::get('debts', 'App\Http\Controllers\DebtController@getRegisteredDebtsByUser');
     Route::delete('debts/{id}', 'App\Http\Controllers\DebtController@delete');
