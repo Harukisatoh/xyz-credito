@@ -1,0 +1,133 @@
+#table-container {
+    width: 80vw;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.delete-button {
+    border-style: none;
+    background-color: red;
+    flex: 1;
+    padding: 1rem;
+    max-width: 40%;
+}
+
+.delete-button:hover {
+    background-color: rgb(224, 0, 0);
+}
+
+.delete-button:active {
+    background-color: rgb(200, 0, 0);
+}
+
+.delete-button > * {
+    color: white;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+.delete-button > span {
+    margin-right: 1rem;
+}
+
+.edit-button {
+    border-style: none;
+    background-color: var(--color-secondary);
+    color: var(--color-button-text);
+    flex: 1;
+    padding: 1rem;
+    max-width: 40%;
+}
+
+.edit-button:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+.edit-button:active {
+    opacity: 0.8;
+}
+
+.edit-button > * {
+    color: white;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+.edit-button > span {
+    margin-right: 1rem;
+}
+
+table { 
+  width: 100%; 
+  border-collapse: collapse;
+  color: black;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold;
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left;
+}
+
+@media 
+only screen and (max-width: 700px),
+(min-device-width: 700px) and (max-device-width: 1024px)  {
+    #table-container {
+        overflow-y: scroll;
+        margin-bottom: 3rem;
+    }
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+        border-bottom: 1px solid #eee;
+		position: relative;
+        padding-left: 50%;
+        color: #999;
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+        white-space: nowrap;
+        color: #222;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Devedor"; }
+	td:nth-of-type(2):before { content: "CPF/CNPJ do Devedor"; }
+	td:nth-of-type(3):before { content: "Valor"; }
+	td:nth-of-type(4):before { content: "Ações"; }
+}

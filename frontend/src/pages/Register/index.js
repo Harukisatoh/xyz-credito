@@ -29,7 +29,7 @@ function Register() {
     return(
         <div className="container">
 
-            <div className="header">
+            <div className="title">
                 <Link to="/" className="back-icon-container">
                     <FaArrowLeft size="30" className="back-icon" />
                 </Link>

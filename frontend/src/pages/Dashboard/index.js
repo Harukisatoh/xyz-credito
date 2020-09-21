@@ -1,22 +1,19 @@
 import React from 'react'
 
-import { useAuth } from '../../contexts/auth'
+import Header from '../../components/Header';
+import DashboardTable from '../../components/DashboardTable';
+import Menu from '../../components/Menu';
 
-function Home() {
-    const { logout } = useAuth()
+import './styles.css'
 
-    function handleLogout(event) {
-        event.preventDefault()
-
-        logout()
-    }
-    
+function Dashboard() {
     return(
-        <div>
-            <h1>Home</h1>
-            <button onClick={handleLogout}>Logout</button>
+        <div id="dashboard-container" className="container">
+            <Header title="XYZ Crédito" />
+            <DashboardTable />
+            <Menu />
         </div>
     )
 }
 
-export default Home
+export default Dashboard
